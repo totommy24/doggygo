@@ -1,13 +1,14 @@
-
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LandingPage } from "./LandingPage";
 import { RistoratoreDashboard } from "./RistoratoreDashboard";
 import DoggyGoRequest from "./DoggyGoRequest";
+import Navbar from "./Navbar";
 
-export default function App() {
+function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/richiesta" element={<DoggyGoRequest />} />
@@ -16,3 +17,7 @@ export default function App() {
     </Router>
   );
 }
+
+export default App;
+
+

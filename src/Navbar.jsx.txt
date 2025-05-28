@@ -1,0 +1,25 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+export default function Navbar() {
+  return (
+    <nav style={{
+      backgroundColor: "#d4f4dd",
+      padding: "10px 20px",
+      display: "flex",
+      justifyContent: "space-between"
+    }}>
+      <Link to="/" style={{ textDecoration: "none", fontWeight: "bold" }}>
+        🐶 DoggyGo
+      </Link>
+      <div style={{ display: "flex", gap: "15px" }}>
+        <Link to="/richiesta" style={{ textDecoration: "none" }}>
+          Richiesta Cliente
+        </Link>
+        <Link to="/ristorante" style={{ textDecoration: "none" }}>
+          Dashboard Ristorante
+        </Link>
+      </div>
+    </nav>
+  );
+}

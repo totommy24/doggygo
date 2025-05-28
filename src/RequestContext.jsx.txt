@@ -1,0 +1,27 @@
+import React, { createContext, useContext, useState } from "react";
+
+const RequestContext = createContext();
+
+export function RequestProvider({ children }) {
+  const [richieste, setRichieste] = useState([]);
+
+  const aggiungiRichiesta = (nuovaRichiesta) => {
+    setRichieste((prev) => [...prev, { ...nuovaRichiesta, stato: "In attesa" }]);
+  };
+
+  const aggiornaStato = (index, nuovoStato) => {
+    setRichieste((prev) =>
+      prev.map((r, i) => (i === index ? { ...r, stato: nuovoStato } : r))
+    );
+  };
+
+  return (
+    <RequestContext.Provider value={{ richieste, aggiungiRichiesta, aggiornaStato }}>
+      {children}
+    </RequestContext.Provider>
+  );
+}
+
+export function useRequestContext() {
+  return useContext(RequestContext);
+}

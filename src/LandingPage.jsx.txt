@@ -1,0 +1,14 @@
+import React from "react";
+
+export function LandingPage() {
+  return (
+    <div style={{ textAlign: "center", padding: "50px" }}>
+      <h1>Benvenuto su DoggyGo</h1>
+      <p>Scegli un'opzione dal menu in alto per continuare:</p>
+      <ul style={{ listStyle: "none", padding: 0 }}>
+        <li><a href="/richiesta">Richiesta Doggy Bag</a></li>
+        <li><a href="/ristorante">Dashboard Ristorante</a></li>
+      </ul>
+    </div>
+  );
+}
